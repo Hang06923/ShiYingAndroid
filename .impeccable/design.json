@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T16:20:00+08:00",
+  "title": "Design System: ShiYing Android",
+  "extensions": {
+    "colorMeta": {
+      "paper-ground": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "#F4F2EC",
+        "tonalRamp": ["#302D27", "#4A463F", "#686259", "#887F73", "#A89E90", "#C9C1B4", "#E5DED2", "#F4F2EC"]
+      },
+      "raised-paper": {
+        "role": "neutral",
+        "displayName": "Raised Paper",
+        "canonical": "#FFFDF8",
+        "tonalRamp": ["#302D27", "#4A463F", "#686259", "#887F73", "#A89E90", "#C9C1B4", "#E5DED2", "#FFFDF8"]
+      },
+      "quiet-paper": {
+        "role": "neutral",
+        "displayName": "Quiet Paper",
+        "canonical": "#E9E5DC",
+        "tonalRamp": ["#2B2925", "#45413B", "#5F5A52", "#797269", "#938B80", "#AEA69A", "#D0C9BD", "#E9E5DC"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#181816",
+        "tonalRamp": ["#181816", "#302F2C", "#4B4944", "#67635D", "#837E76", "#A09A91", "#C6BFB4", "#F4F2EC"]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#66625B",
+        "tonalRamp": ["#24221F", "#37342F", "#4B4741", "#66625B", "#817D75", "#9C978F", "#C7C1B7", "#F4F2EC"]
+      },
+      "night-capture": {
+        "role": "neutral",
+        "displayName": "Night Capture",
+        "canonical": "#1C1D1C",
+        "tonalRamp": ["#111211", "#1C1D1C", "#292B28", "#383A36", "#4B4E49", "#6D7069", "#A4A79F", "#F4F2EC"]
+      },
+      "projection-amber": {
+        "role": "primary",
+        "displayName": "Projection Amber",
+        "canonical": "#E6AA4F",
+        "tonalRamp": ["#402A0B", "#62420F", "#875A12", "#B17A1D", "#D69737", "#E6AA4F", "#F1CA86", "#FAE8C9"]
+      },
+      "signal-green": {
+        "role": "semantic-success",
+        "displayName": "Signal Green",
+        "canonical": "#177C59",
+        "tonalRamp": ["#103126", "#144A36", "#176247", "#177C59", "#23A677", "#61C49D", "#A9E2CC", "#E4F5EE"]
+      },
+      "warning-red": {
+        "role": "semantic-error",
+        "displayName": "Warning Red",
+        "canonical": "#B7373F",
+        "tonalRamp": ["#3F171A", "#642126", "#8A2D34", "#B7373F", "#D75E64", "#EA9094", "#F5C2C4", "#FCE9EA"]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Task Headline",
+        "purpose": "The opening task statement and the only very large type on the screen."
+      },
+      "title": {
+        "displayName": "Content Title",
+        "purpose": "Parsed media titles and section labels."
+      },
+      "body": {
+        "displayName": "Reading Body",
+        "purpose": "Short instructions and supporting context."
+      },
+      "label": {
+        "displayName": "Interface Label",
+        "purpose": "Input labels, state labels and metadata."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "standard",
+        "value": "190ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Button feedback and state changes."
+      },
+      {
+        "name": "progress",
+        "value": "240ms ease-out",
+        "purpose": "Download progress changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-phone",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Parse Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Starts parsing the current link and is the only amber primary action.",
+      "html": "<button class=\"ds-primary\">解析链接 <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:142px;height:48px;padding:0 18px;border:0;border-radius:14px;background:#E6AA4F;color:#181816;font:700 14px system-ui,sans-serif;transition:transform 190ms cubic-bezier(.2,.8,.2,1)}.ds-primary svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-primary:active{transform:scale(.975)}.ds-primary:focus-visible{outline:3px solid rgba(230,170,79,.7);outline-offset:2px}"
+    },
+    {
+      "name": "Download Button",
+      "kind": "button",
+      "refersTo": "button-download",
+      "description": "Confirms the parsed result and starts the local download.",
+      "html": "<button class=\"ds-download\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12M7.5 10.5 12 15l4.5-4.5M4 19.5h16\"/></svg>下载到手机</button>",
+      "css": ".ds-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:48px;padding:0 17px;border:0;border-radius:14px;background:#181816;color:#F4F2EC;font:700 14px system-ui,sans-serif}.ds-download svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-download:active{transform:scale(.975)}.ds-download:focus-visible{outline:3px solid rgba(230,170,79,.7);outline-offset:2px}"
+    },
+    {
+      "name": "Capture Input",
+      "kind": "input",
+      "refersTo": "capture-input",
+      "description": "A dark capture surface that focuses attention on the pasted link.",
+      "html": "<div class=\"ds-capture\"><label for=\"ds-url\">视频链接或分享文案</label><textarea id=\"ds-url\" rows=\"3\" placeholder=\"在这里粘贴链接\"></textarea></div>",
+      "css": ".ds-capture{padding:18px;border-radius:20px;background:#1C1D1C;color:#FFFDF8}.ds-capture label{display:block;margin-bottom:12px;color:rgba(255,253,248,.7);font:600 12px system-ui,sans-serif}.ds-capture textarea{width:100%;min-height:82px;resize:none;border:0;border-radius:14px;padding:14px 15px;background:#292A28;color:#FFFDF8;caret-color:#E6AA4F;font:400 16px/1.45 system-ui,sans-serif}.ds-capture textarea::placeholder{color:#A5A39C}.ds-capture textarea:focus-visible{outline:3px solid rgba(230,170,79,.7);outline-offset:2px}"
+    },
+    {
+      "name": "History Row",
+      "kind": "custom",
+      "refersTo": "history-row",
+      "description": "A compact record with one direct follow-up action.",
+      "html": "<article class=\"ds-history\"><div><h3>街角的一段雨声</h3><p>X · 已完成 · 10/28 16:13</p></div><button>打开</button></article>",
+      "css": ".ds-history{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:72px;padding:12px 14px;border-radius:14px;background:#FFFDF8;color:#181816;font-family:system-ui,sans-serif}.ds-history h3{margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px}.ds-history p{margin:6px 0 0;color:#66625B;font-size:12px}.ds-history button{min-width:48px;min-height:48px;border:0;border-radius:12px;background:transparent;color:#181816;font-weight:700}"
+    },
+    {
+      "name": "Active Download",
+      "kind": "custom",
+      "description": "The single live task with a restrained amber progress surface.",
+      "html": "<section class=\"ds-active\"><div><p>下载中</p><h3>把周末剪成一段安静的视频</h3></div><span>取消</span><div class=\"track\"><i></i></div><p>64%</p></section>",
+      "css": ".ds-active{padding:16px;border-radius:20px;background:#F3E3C8;color:#181816;font-family:system-ui,sans-serif}.ds-active>div:first-child{display:flex;justify-content:space-between}.ds-active p{margin:0;color:#66625B;font-size:12px}.ds-active h3{margin:5px 0 0;font-size:16px}.ds-active .track{height:6px;margin-top:15px;overflow:hidden;border-radius:999px;background:rgba(24,24,22,.1)}.ds-active .track i{display:block;width:64%;height:100%;background:#E6AA4F}"
+    }
+  ],
+  "narrative": {
+    "northStar": "口袋里的取景册",
+    "overview": "拾影不是一间视频网站，而是一本放在口袋里的小取景册：浅暖的纸面负责承载内容，深色的取景区负责聚焦链接，暖金色只标记现在可以做的那一步。界面始终像工具，不像内容平台的首页。整个界面保持单列、短路径和安静密度；视觉表达集中在一个取景框式预览、一个暖金主操作和一条明确进度线上。",
+    "keyCharacteristics": [
+      "暖灰纸面与近黑取景区形成单一强对比",
+      "暖金是唯一主操作强调色，出现范围克制",
+      "单列一屏，结果、当前任务和历史依次向下展开",
+      "图标是同一套 1.75 描边 SVG，不使用 emoji",
+      "实时支持浅色与深色系统主题，并尊重减少动效设置"
+    ],
+    "rules": [
+      {
+        "name": "取景框规则",
+        "body": "深色只承担输入与媒体预览，不把整页染黑；浅色地面必须始终可见。",
+        "section": "colors"
+      },
+      {
+        "name": "琥珀稀缺规则",
+        "body": "暖金只用于主操作和当前任务，不承担普通文字、装饰边框或大面积背景。",
+        "section": "colors"
+      },
+      {
+        "name": "单层深度规则",
+        "body": "一个区域只使用背景材质或边框中的一种方式表达层级，不同时堆叠。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "让粘贴、解析、下载在同一个屏幕内闭环",
+      "在深色输入与预览区域使用足够亮的正文和元数据",
+      "保持 48px 触控区域和系统字体缩放",
+      "用具体中文说明错误以及下一步"
+    ],
+    "donts": [
+      "使用远程字体、远程图标或需要云端生成的界面资源",
+      "把本地解析解释成不需要网络",
+      "用多层卡片、彩色左边框或装饰性渐变掩盖信息结构",
+      "给同一屏叠加多个主按钮"
+    ]
+  }
+}

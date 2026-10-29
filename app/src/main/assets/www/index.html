@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f2ec">
+  <title>拾影</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="status-blur" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M6 8.5V6h2.5M23.5 6H26v2.5M26 23.5V26h-2.5M8.5 26H6v-2.5" />
+        <path class="brand-play" d="M13 11.5 21 16l-8 4.5z" />
+      </svg>
+      <div>
+        <h1>拾影</h1>
+        <p>本地解析 · 自己保存</p>
+      </div>
+    </div>
+    <button class="icon-button" id="openDownloads" type="button" aria-label="打开系统下载目录">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 7.5h6l2 2h9v9.5a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 19z" />
+        <path d="M3.5 9.5V5A1.5 1.5 0 0 1 5 3.5h4l2 2h6.5A1.5 1.5 0 0 1 19 7v2.5" />
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="pageTitle">
+      <h2 id="pageTitle">把一个链接，<br>留在手机里。</h2>
+      <p>支持抖音、YouTube 和 X 的单条视频。解析与保存都在本机完成。</p>
+    </section>
+
+    <form class="capture" id="parseForm" novalidate>
+      <label for="urlInput">视频链接或分享文案</label>
+      <textarea
+        id="urlInput"
+        rows="3"
+        autocomplete="off"
+        autocapitalize="none"
+        spellcheck="false"
+        placeholder="在这里粘贴链接"></textarea>
+      <div class="capture-actions">
+        <button class="text-button" id="pasteButton" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 8.5h8A1.5 1.5 0 0 1 18.5 10v8A1.5 1.5 0 0 1 17 19.5H9A1.5 1.5 0 0 1 7.5 18v-8A1.5 1.5 0 0 1 9 8.5Z" />
+            <path d="M6.5 15H6A1.5 1.5 0 0 1 4.5 13.5v-8A1.5 1.5 0 0 1 6 4h8a1.5 1.5 0 0 1 1.5 1.5V6" />
+          </svg>
+          粘贴
+        </button>
+        <button class="primary-button" id="parseButton" type="submit">
+          <span>解析链接</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <p class="notice" id="notice" role="status" aria-live="polite"></p>
+
+    <section class="result" id="result" hidden aria-label="解析结果">
+      <div class="media-frame" id="mediaFrame">
+        <div class="media-grid" aria-hidden="true"></div>
+        <span class="platform-tag" id="platformTag"></span>
+        <div class="media-caption">
+          <h3 id="mediaTitle"></h3>
+          <p><span id="mediaAuthor"></span><span class="dot" aria-hidden="true"></span><span id="mediaDuration"></span></p>
+        </div>
+      </div>
+      <div class="result-actions">
+        <p id="resultHint">自动选择兼容性较好的最高 1080p MP4</p>
+        <button class="download-button" id="downloadButton" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M4 19.5h16" />
+          </svg>
+          <span id="downloadLabel">下载到手机</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="active-task" id="activeTask" hidden aria-label="当前下载">
+      <div class="active-copy">
+        <div>
+          <p class="active-label" id="activeLabel">正在下载</p>
+          <h3 id="activeTitle"></h3>
+        </div>
+        <button class="inline-action" id="cancelButton" type="button">取消</button>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <span id="progressFill"></span>
+      </div>
+      <p class="progress-value" id="progressValue">0%</p>
+    </section>
+
+    <section class="history" aria-labelledby="historyTitle">
+      <div class="section-heading">
+        <h2 id="historyTitle">最近保存</h2>
+        <button class="text-button compact" id="refreshButton" type="button">刷新</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+  </main>
+
+  <script src="ui-model.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

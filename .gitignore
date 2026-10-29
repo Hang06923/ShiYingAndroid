@@ -1,0 +1,12 @@
+.gradle/
+local.properties
+app/build/
+dist/
+*.jks
+*.keystore
+keystore.properties
+*.log
+node_modules/
+.impeccable/review/
+*.iml
+.idea/

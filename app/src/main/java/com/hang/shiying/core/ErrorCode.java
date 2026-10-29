@@ -1,0 +1,16 @@
+package com.hang.shiying.core;
+
+public enum ErrorCode {
+    UNSUPPORTED_URL,
+    NOT_VIDEO,
+    NETWORK_ERROR,
+    LOGIN_REQUIRED,
+    REGION_BLOCKED,
+    PARSE_FAILED,
+    DOWNLOAD_FAILED,
+    PROCESSING_FAILED,
+    STORAGE_FULL,
+    STORAGE_DENIED,
+    CANCELED,
+    INTERRUPTED
+}
